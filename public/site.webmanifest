@@ -1,0 +1,15 @@
+{
+    "name": "MainStack",
+    "short_name": "MSK",
+    "icons": [
+        {
+            "src": "https://res.cloudinary.com/codeleaf/image/upload/v1668525892/mainstack_logo.jpg",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}
