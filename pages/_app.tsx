@@ -8,6 +8,7 @@ import theme from "@/theme";
 import { PageTitle } from "@/utils";
 import { useState } from "react";
 import { AppLayout } from "@/shared";
+import "../public/fonts/style.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const title = PageTitle(Component);

@@ -7,8 +7,8 @@ const styles = extendTheme({
     ...foundations.colors,
   },
   fonts: {
-    heading: "'Poppins', sans-serif",
-    body: "'Poppins', sans-serif",
+    heading: "Söhne",
+    body: "Söhne",
   },
   components: {
     Button: {
@@ -48,7 +48,7 @@ export const theme = {
       html: {
         boxSizing: 'border-box',
         fontSize: '50.5%',
-        fontFamily: "'Poppins', sans-serif",
+        fontFamily: "Söhne",
       },
 
       body: {

@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Söhne;
+  src: url("./TestSöhne-Leicht.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Söhne;
+  src: url("./TestSöhneBuch.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Söhne;
+  src: url("./TestSöhne-Halbfett.otf");
+  font-weight: 600;
+}
