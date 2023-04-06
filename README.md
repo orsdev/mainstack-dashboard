@@ -1,6 +1,6 @@
-# MainStack Assessment
+# Mainstack Assessment
 
-MainStack Front-end engineering assessment documentation.
+Mainstack Front-end engineering assessment documentation.
 
 ## Available Scripts
 
