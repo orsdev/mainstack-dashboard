@@ -1,12 +1,13 @@
 import { PageHeader, PageTitle, TimeFrame, Views } from "@/components";
 import { fetcher } from "@/config";
 import { useGraphData } from "@/hooks";
+import { FullSpinner } from "@/shared";
 import { GetServerSideProps } from "next";
 import { useState } from "react";
 import { QueryClient, dehydrate } from "react-query";
 
 export default function Home() {
-  const { isLoading, error, data } = useGraphData();
+  const { isLoading, data } = useGraphData();
   const [timeFrame, setTimeFrame] = useState({
     label: "All time",
     value: "all-time",
@@ -14,6 +15,7 @@ export default function Home() {
 
   return (
     <>
+      {isLoading && <FullSpinner />}
       <PageTitle />
       <PageHeader />
       <TimeFrame
