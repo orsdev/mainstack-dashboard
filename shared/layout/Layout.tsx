@@ -8,7 +8,7 @@ export const AppLayout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Sidebar />
-      <Box ml={{ lg: SidebarWidth }} pl="6rem" pt="38px">
+      <Box ml={{ lg: SidebarWidth }} px="6rem" pt="38px">
         {children}
       </Box>
     </>
