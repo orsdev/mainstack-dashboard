@@ -1,5 +1,12 @@
+import { PageHeader, PageTitle } from "@/components";
+
 export default function Home() {
-  return <>Home</>;
+  return (
+    <>
+      <PageTitle />
+      <PageHeader />
+    </>
+  );
 }
 
 Home.meta = {
