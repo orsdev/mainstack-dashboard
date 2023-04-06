@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import theme from "@/theme";
 import { PageTitle } from "@/utils";
 import { useState } from "react";
+import { AppLayout } from "@/shared";
 
 export default function App({ Component, pageProps }: AppProps) {
   const title = PageTitle(Component);
@@ -17,7 +18,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Hydrate state={pageProps.dehydratedState}>
         <ChakraProvider theme={theme}>
           <DefaultSeo title={`${title} | Mainstack®︁`} />
-          <Component {...pageProps} />
+          <AppLayout>
+            <Component {...pageProps} />
+          </AppLayout>
         </ChakraProvider>
         <ReactQueryDevtools initialIsOpen={false} />
         <Toaster
