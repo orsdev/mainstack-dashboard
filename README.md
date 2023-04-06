@@ -32,4 +32,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Production Link
 
-[mainstack-fe](https://ogundare-samuel-lendsqr-fe-test.vercel.app/)
+[mainstack-fe](https://mainstack-dashboard.vercel.app/)
