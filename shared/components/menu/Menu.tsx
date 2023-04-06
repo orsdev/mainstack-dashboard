@@ -23,7 +23,7 @@ export const ProfileMenu = () => {
           Blessing Daniels
         </Heading>
       </Flex>
-      <Menu>
+      <Menu placement="left-start">
         <MenuButton>
           <svg
             width={12}
@@ -38,7 +38,7 @@ export const ProfileMenu = () => {
             />
           </svg>
         </MenuButton>
-        <MenuList width={220} mt={10} px="1.5rem" border="none" shadow="lg">
+        <MenuList width={170} mt={10} px="1.5rem" border="none" shadow="lg">
           <MenuItem
             _focus={{
               backgroundColor: "transparent",
