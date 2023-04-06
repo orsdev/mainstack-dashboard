@@ -1,6 +1,6 @@
 export * from './page-title'
 export * from './page-header'
 export * from './time-frame'
-export * from './view'
+export * from './views'
 export * from './location'
 export * from './referrals'
