@@ -1,6 +1,6 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: process.env.BASE_ENDPOINT,
+  baseURL: 'https://fe-task-api.mainstack.io',
   timeout: 50000, // 50 seconds
 })

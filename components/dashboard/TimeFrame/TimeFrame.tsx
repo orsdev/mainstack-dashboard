@@ -4,7 +4,10 @@ import { FC, useState } from "react";
 import { TimeFrameProps } from "./types";
 
 export const TimeFrame: FC<TimeFrameProps> = ({ onClicked }) => {
-  const [selected, setSelected] = useState("all-time");
+  const [selected, setSelected] = useState({
+    label: "All Time",
+    value: "all-time",
+  });
 
   return (
     <Flex mt="3rem" gap="2.8rem" flexWrap="wrap">
@@ -16,21 +19,24 @@ export const TimeFrame: FC<TimeFrameProps> = ({ onClicked }) => {
           alignItems="center"
           justifyContent="center"
           border="1px solid"
-          borderColor={selected === value ? "_primary.100" : "_accent.400"}
-          backgroundColor={
-            selected === value ? "  _highlight.600" : "transparent"
+          textTransform="capitalize"
+          borderColor={
+            selected.value === value ? "_primary.100" : "_accent.400"
           }
-          color={selected === value ? "_primary.100" : "_accent.300"}
+          backgroundColor={
+            selected.value === value ? "  _highlight.600" : "transparent"
+          }
+          color={selected.value === value ? "_primary.100" : "_accent.300"}
           rounded="full"
           py="2rem"
           px="1.8rem"
           fontSize="1.4rem"
           _hover={{
-            color: selected === value ? "_primary.100" : "_accent.200",
+            color: selected.value === value ? "_primary.100" : "_accent.200",
           }}
           onClick={() => {
-            setSelected(value);
-            onClicked && onClicked(value);
+            setSelected({ label, value });
+            onClicked && onClicked({ label, value });
           }}
         >
           {label}
@@ -41,24 +47,29 @@ export const TimeFrame: FC<TimeFrameProps> = ({ onClicked }) => {
         display="flex"
         alignItems="center"
         justifyContent="center"
+        textTransform="capitalize"
         border="1px solid"
         rounded="full"
         py="2rem"
         px="1.8rem"
         fontSize="1.4rem"
         borderColor={
-          selected === "custom-date" ? "_primary.100" : "_accent.400"
+          selected.value === "custom-date" ? "_primary.100" : "_accent.400"
         }
         backgroundColor={
-          selected === "custom-date" ? "  _highlight.600" : "transparent"
+          selected.value === "custom-date" ? "  _highlight.600" : "transparent"
         }
-        color={selected === "custom-date" ? "_primary.100" : "_accent.300"}
+        color={
+          selected.value === "custom-date" ? "_primary.100" : "_accent.300"
+        }
         _hover={{
-          color: selected === "custom-date" ? "_primary.100" : "_accent.200",
+          color:
+            selected.value === "custom-date" ? "_primary.100" : "_accent.200",
         }}
         onClick={() => {
-          setSelected("custom-date");
-          onClicked && onClicked("custom-date");
+          setSelected({ label: "Custom date", value: "custom-date" });
+          onClicked &&
+            onClicked({ label: "Custom date", value: "custom-date" });
         }}
       >
         Custom Date

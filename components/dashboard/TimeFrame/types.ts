@@ -1,3 +1,3 @@
 export type TimeFrameProps = {
-  onClicked?: (value: string) => void
+  onClicked?: ({ label, value }: { label: string, value: string }) => void
 }
