@@ -12,7 +12,7 @@ export const ReferralChartOptions = {
     },
   },
   tooltip: {
-    enabled: false,
+    enabled: true,
   },
   dataLabels: {
     enabled: false,

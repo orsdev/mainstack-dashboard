@@ -12,7 +12,7 @@ export const LocationChartOptions = {
     },
   },
   tooltip: {
-    enabled: false,
+    enabled: true,
   },
   dataLabels: {
     enabled: false,

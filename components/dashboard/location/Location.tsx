@@ -83,6 +83,7 @@ export const Location: FC<LocationsProps> = ({ locations }) => {
               fill: {
                 colors: colorArray(locations as ILocations[]),
               },
+              labels: locations?.map((item) => item?.country),
             }}
             series={locations?.map((item) => item?.count)}
             width="100%"

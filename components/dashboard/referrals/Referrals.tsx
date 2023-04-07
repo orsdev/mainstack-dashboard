@@ -82,6 +82,7 @@ export const Referrals: FC<ReferralsProps> = ({ referrals }) => {
               fill: {
                 colors: colorArray(referrals as IReferrals[]),
               },
+              labels: referrals?.map((item) => item?.source),
             }}
             series={referrals?.map((item) => item?.count)}
             width="100%"
