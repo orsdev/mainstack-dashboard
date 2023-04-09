@@ -50,7 +50,6 @@ export const Sidebar = () => {
         transition="transform 450ms ease, width 450ms ease"
         borderRight="1px solid"
         borderColor="_accent.400"
-        paddingRight="24px"
         data-show={showSidebar}
         transform={{ base: "translateX(-92%)", lg: "translateX(0)" }}
         sx={{
@@ -68,7 +67,8 @@ export const Sidebar = () => {
           pos="absolute"
           right="-15px"
           top="100px"
-          bg="white"
+          bg="_primary.100"
+          color="white"
           shadow="md"
           width="30px"
           height="30px"
@@ -98,135 +98,187 @@ export const Sidebar = () => {
               }}
             />
           </Link>
-          <Box display={{ base: "block", lg: "none" }}>
+          <Box
+            display={{ base: "block", lg: "none" }}
+            pr="24px"
+            data-show={showSidebar}
+            sx={{
+              '&[data-show="false"]': {
+                display: "none",
+              },
+            }}
+          >
             <Button variant="unstyled" onClick={() => setShowSidebar(false)}>
               <ArrowLineIcon size={20} />
             </Button>
           </Box>
         </Flex>
 
-        {/* Menu */}
-        <Box color="_accent.100">
-          <Box as="ul">
-            {MainMenuNavigation.map(({ icon, title, route }) => (
-              <Box
-                as="li"
-                key={title}
-                pl="60px"
-                fontSize="1.6rem"
-                mb="2.4rem"
-                borderLeft="2px solid"
-                borderColor={
-                  router.pathname === route ? "_primary.100" : "transparent"
-                }
-                color={router.pathname === route ? "_primary.100" : "inherit"}
-                sx={{
-                  "& path": {
-                    fill: router.pathname === route ? "#FF5403" : "_accent.100",
-                  },
-                }}
-              >
-                <Link href={route}>
-                  <Flex as="span" alignItems="center">
-                    {icon}
-                    <Box as="span" ml="1.2rem">
-                      {title}
-                    </Box>
-                  </Flex>
-                </Link>
-              </Box>
-            ))}
+        <Box
+          maxH="full"
+          overflow={showSidebar ? "auto" : "hidden"}
+          w="full"
+          p={0}
+          m={0}
+          pr="24px"
+          pb="150px"
+          sx={{
+            "&::-webkit-scrollbar": {
+              width: 2,
+            },
+            "&::-webkit-scrollbar-track": {
+              bg: "#f1f1f1",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              backgroundColor: "#888",
+            },
+            "&::-webkit-scrollbar-thumb:hover": {
+              backgroundColor: "#555",
+            },
+
+            "@media screen and (max-height:700px)": {
+              pt: 10,
+              pb: "220px",
+            },
+          }}
+        >
+          {/* Menu */}
+          <Box color="_accent.100">
+            <Box as="ul">
+              {MainMenuNavigation.map(({ icon, title, route }) => (
+                <Box
+                  as="li"
+                  key={title}
+                  pl="60px"
+                  fontSize="1.6rem"
+                  mb="2.4rem"
+                  borderLeft="2px solid"
+                  borderColor={
+                    router.pathname === route ? "_primary.100" : "transparent"
+                  }
+                  color={router.pathname === route ? "_primary.100" : "inherit"}
+                  sx={{
+                    "& path": {
+                      fill:
+                        router.pathname === route ? "#FF5403" : "_accent.100",
+                    },
+                  }}
+                >
+                  <Link href={route}>
+                    <Flex as="span" alignItems="center">
+                      {icon}
+                      <Box as="span" ml="1.2rem">
+                        {title}
+                      </Box>
+                    </Flex>
+                  </Link>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+
+          {/* Menu */}
+          <Box color="_accent.100" mt="32px">
+            <Heading
+              as="h4"
+              fontSize="1.2rem"
+              mb="1.6rem"
+              pl="60px"
+              fontWeight={400}
+            >
+              OTHERS 1
+            </Heading>
+            <Box as="ul">
+              {OthersOneMenuNavigation.map(({ icon, title, route }) => (
+                <Box
+                  as="li"
+                  key={title}
+                  pl="60px"
+                  fontSize="1.6rem"
+                  mb="2.4rem"
+                  borderLeft="2px solid"
+                  borderColor={
+                    router.pathname === route ? "_primary.100" : "transparent"
+                  }
+                  color={router.pathname === route ? "_primary.100" : "inherit"}
+                  sx={{
+                    "& path": {
+                      fill:
+                        router.pathname === route ? "#FF5403" : "_accent.100",
+                    },
+                  }}
+                >
+                  <Link href={route}>
+                    <Flex as="span" alignItems="center">
+                      {icon}
+                      <Box as="span" ml="1.2rem">
+                        {title}
+                      </Box>
+                    </Flex>
+                  </Link>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+
+          {/* Menu */}
+          <Box color="_accent.100" mt="32px">
+            <Heading
+              as="h4"
+              fontSize="1.2rem"
+              mb="1.6rem"
+              pl="60px"
+              fontWeight={400}
+            >
+              OTHERS 2
+            </Heading>
+            <Box as="ul">
+              {OthersTwoMenuNavigation.map(({ icon, title, route }) => (
+                <Box
+                  as="li"
+                  key={title}
+                  pl="60px"
+                  fontSize="1.6rem"
+                  mb="2.4rem"
+                  borderLeft="2px solid"
+                  borderColor={
+                    router.pathname === route ? "_primary.100" : "transparent"
+                  }
+                  color={router.pathname === route ? "_primary.100" : "inherit"}
+                  sx={{
+                    "& path": {
+                      fill:
+                        router.pathname === route ? "#FF5403" : "_accent.100",
+                    },
+                  }}
+                >
+                  <Link href={route}>
+                    <Flex as="span" alignItems="center">
+                      {icon}
+                      <Box as="span" ml="1.2rem">
+                        {title}
+                      </Box>
+                    </Flex>
+                  </Link>
+                </Box>
+              ))}
+            </Box>
           </Box>
         </Box>
 
-        {/* Menu */}
-        <Box color="_accent.100" mt="32px">
-          <Heading
-            as="h4"
-            fontSize="1.2rem"
-            mb="1.6rem"
-            pl="60px"
-            fontWeight={400}
-          >
-            OTHERS 1
-          </Heading>
-          <Box as="ul">
-            {OthersOneMenuNavigation.map(({ icon, title, route }) => (
-              <Box
-                as="li"
-                key={title}
-                pl="60px"
-                fontSize="1.6rem"
-                mb="2.4rem"
-                borderLeft="2px solid"
-                borderColor={
-                  router.pathname === route ? "_primary.100" : "transparent"
-                }
-                color={router.pathname === route ? "_primary.100" : "inherit"}
-                sx={{
-                  "& path": {
-                    fill: router.pathname === route ? "#FF5403" : "_accent.100",
-                  },
-                }}
-              >
-                <Link href={route}>
-                  <Flex as="span" alignItems="center">
-                    {icon}
-                    <Box as="span" ml="1.2rem">
-                      {title}
-                    </Box>
-                  </Flex>
-                </Link>
-              </Box>
-            ))}
-          </Box>
-        </Box>
-
-        {/* Menu */}
-        <Box color="_accent.100" mt="32px">
-          <Heading
-            as="h4"
-            fontSize="1.2rem"
-            mb="1.6rem"
-            pl="60px"
-            fontWeight={400}
-          >
-            OTHERS 2
-          </Heading>
-          <Box as="ul">
-            {OthersTwoMenuNavigation.map(({ icon, title, route }) => (
-              <Box
-                as="li"
-                key={title}
-                pl="60px"
-                fontSize="1.6rem"
-                mb="2.4rem"
-                borderLeft="2px solid"
-                borderColor={
-                  router.pathname === route ? "_primary.100" : "transparent"
-                }
-                color={router.pathname === route ? "_primary.100" : "inherit"}
-                sx={{
-                  "& path": {
-                    fill: router.pathname === route ? "#FF5403" : "_accent.100",
-                  },
-                }}
-              >
-                <Link href={route}>
-                  <Flex as="span" alignItems="center">
-                    {icon}
-                    <Box as="span" ml="1.2rem">
-                      {title}
-                    </Box>
-                  </Flex>
-                </Link>
-              </Box>
-            ))}
-          </Box>
-        </Box>
-
-        {/* Menu */}
-        <Box pl="60px" mt="190px">
+        <Box
+          pl="60px"
+          bg="white"
+          pr="24px"
+          sx={{
+            "@media screen and (max-height:800px)": {
+              position: "absolute",
+              bottom: 0,
+              width: "full",
+              py: "20px",
+            },
+          }}
+        >
           <ProfileMenu />
         </Box>
       </Box>
